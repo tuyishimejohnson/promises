@@ -24,14 +24,22 @@ request.onload = function() {
 
 const URL = "https://dog.ceo/api/breeds/image/random"
 
-/* async function fetchDog() {
+async function fetchDog() {
     try {
-        const res = await fetch(URL)
-        const data = await res.json()    
-        console.log(data)
+        
+        const response = await fetch(URL)
+        const data = await response.json()
+        data = dogImages(data.message)
+
     } catch (error) {
-        console.log(`Error: ${error}`)
+        console.log(`error: ${error}`)
     }
 }
- */
 
+
+function dogImages(dataUrl) {
+    const dogImage = document.getElementById("dogImages")
+    dogImage.src = dataUrl
+}
+
+fetchDog()

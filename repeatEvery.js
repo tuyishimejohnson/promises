@@ -62,3 +62,18 @@ const promise = new Promise((resolve, reject) => {
     .then(() => {
       console.log('After catch');
     });
+
+    // POST request using fetch API
+
+    const url = "url"
+
+    fetch(url, {
+      method: "POST",
+      Headers: {
+        Accept: application.json,
+        "content-type": "Application/json"
+      },
+
+      Body: "body",
+      cache: "default"
+    })

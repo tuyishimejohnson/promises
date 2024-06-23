@@ -1,4 +1,7 @@
 
+
+const URL = "https://dog.ceo/api/breeds/image/random"
+
 function fetchData() {
     fetch(URL)
 
