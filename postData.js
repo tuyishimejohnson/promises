@@ -8,7 +8,6 @@ form.addEventListener("submit", (e) => {
     const name = document.getElementById("name").value
     const body = document.getElementById("body").value
 
-
     function postData() {
 
 
@@ -35,7 +34,6 @@ form.addEventListener("submit", (e) => {
     }
     
 })
-
 
 postData()
 
