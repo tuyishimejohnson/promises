@@ -1,14 +1,13 @@
 const URL = 'https://jsonplaceholder.typicode.com/posts'
 
 const form = document.getElementById("form")
-const name = document.getElementById("name")
-const body = document.getElementById("body")
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
 
-    name.value
-    body.value
+    const name = document.getElementById("name").value
+    const body = document.getElementById("body").value
+
 
     function postData() {
 
@@ -28,10 +27,17 @@ form.addEventListener("submit", (e) => {
     
         .then(response => response.json())
         .then(data => console.log(data))
-        .catch(error => console.error(`Error: There is an error in fetching data`))
+        const title = document.getElementById("title")
+        const par = document.getElementById("par")
+
+        title.innerHTML = data.title
+        par.innerHTML = data.body
     }
     
 })
+
+
+postData()
 
 
 
