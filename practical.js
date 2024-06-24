@@ -80,3 +80,17 @@ const fetchApi = async () => {
 }
 
 fetchApi()
+
+// 8. Create a simple callback function that multiplies two numbers and then calls a callback with the result.
+
+function multiplyNumbers(n1, n2, callback) {
+    let result = n1 * n2
+    callback(result)
+    
+}
+ 
+function anotherFunction(result) {
+    console.log(result)
+}
+
+multiplyNumbers(5, 6, anotherFunction)
