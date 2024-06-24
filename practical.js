@@ -37,3 +37,9 @@ const timeInterval = setInterval(() => {
 }, 1000);
 
 // 4. Write a Promise that resolves with "Success!" after 1 second. Log the result to the console.
+
+const promise = new Promise((resolve) => {
+    resolve(setTimeout(() => {
+        console.log("Success")
+    }, 1000))
+})
