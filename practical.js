@@ -43,3 +43,13 @@ const promise = new Promise((resolve) => {
         console.log("Success")
     }, 1000))
 })
+
+// 5. Create a Promise that rejects with "Error!" after 2 seconds. Handle the error using `.catch()`.
+
+const anotherPromise = new Promise((reject) => {
+    reject(setTimeout(() => {
+        console.log("Rejected")
+    }, 2000))
+})
+
+anotherPromise.catch(error => console.log(error))
