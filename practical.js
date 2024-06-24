@@ -53,3 +53,30 @@ const anotherPromise = new Promise((reject) => {
 })
 
 anotherPromise.catch(error => console.log(error))
+
+// 6. Using the Fetch API, write a function to fetch data from an API endpoint and log the response to the console.
+
+const url = "https://catfact.ninja/fact"
+
+fetch(url)
+
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.log("Error: " + error))
+
+// 7. Write an asynchronous function using `async`/`await` to fetch and log data from an API.
+
+const url1 = "https://catfact.ninja/fact"
+
+const fetchApi = async () => {
+    try {
+        const result = await fetch(url1)
+        const data = await result.json()
+        console.log(data)
+    } catch (error) {
+        console.log(error)
+    }
+    
+}
+
+fetchApi()
