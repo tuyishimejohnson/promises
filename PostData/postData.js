@@ -1,4 +1,3 @@
-/* const URL = 'https://reqres.in/api/users' */
 
 const myform = document.getElementById("form")
 
@@ -10,22 +9,25 @@ myform.addEventListener("submit", (e) => {
     const mybody = document.getElementById("bd").value
     
     
+    const data = {
+        name: name,
+        body: mybody
+    }
 
-
-
-    /* fetch(URL, {
+    fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
         headers: {
-            "Content-type": "application/json",
+            "Content-type": "Application/json",
         },
-        body: JSON.stringify({
-            
-        })
+
+        body: JSON.stringify(data)
+
     })
 
     .then(response => response.json())
     .then(data => console.log(data))
-    .catch(error => console.log(`Error: This is an error! ${error}`)) */
+    .catch(error => console.log("Error " + error))
+
     
 })
 
