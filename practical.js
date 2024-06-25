@@ -94,3 +94,33 @@ function anotherFunction(result) {
 }
 
 multiplyNumbers(5, 6, anotherFunction)
+
+// 9. Write a function that makes an asynchronous request using `XMLHttpRequest` and logs the response.
+
+
+const xhr = new XMLHttpRequest()
+
+xhr.open("GET", "https://catfact.ninja/fact")
+
+
+
+xhr.onload = function () {
+    if(xhr.status !== 200) {
+        console.log(`Error fetching`)
+    }
+    console.log(xhr.responseText)
+    
+}
+
+xhr.send()
+
+
+//  Create a Promise that resolves with "Data fetched" after 1 second and log the message when it resolves.
+
+
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Data fetched")
+    }, 1000);
+}).then(value => console.log(value))
+
