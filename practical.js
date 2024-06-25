@@ -1,4 +1,4 @@
-// 1. Write a function that uses `setTimeout` to log "Hello, World!" to the console after 2 seconds.
+/* // 1. Write a function that uses `setTimeout` to log "Hello, World!" to the console after 2 seconds.
 
 setTimeout(() => {
     console.log("Hello world")
@@ -93,12 +93,12 @@ function anotherFunction(result) {
     console.log(result)
 }
 
-multiplyNumbers(5, 6, anotherFunction)
+multiplyNumbers(5, 6, anotherFunction) */
 
 // 9. Write a function that makes an asynchronous request using `XMLHttpRequest` and logs the response.
 
 
-const xhr = new XMLHttpRequest()
+/* const xhr = new XMLHttpRequest()
 
 xhr.open("GET", "https://catfact.ninja/fact")
 
@@ -112,15 +112,37 @@ xhr.onload = function () {
     
 }
 
-xhr.send()
+xhr.send() */
 
 
 //  Create a Promise that resolves with "Data fetched" after 1 second and log the message when it resolves.
 
-
-const myPromise = new Promise((resolve, reject) => {
+/* const myPromise = new Promise((resolve) => {
     setTimeout(() => {
         resolve("Data fetched")
     }, 1000);
-}).then(value => console.log(value))
+}).then(value => console.log(value)) */
 
+// 11. Write a function that chains two Promises together, where the second Promise depends on the result of the first.
+
+/* let value = 3
+const myPromise = new Promise((resolve, reject) => {
+    
+    resolve("Promise resolved")
+}).then(value => value * 3).then(value => value * 4) */
+
+// 12. Create an `async` function that performs three asynchronous operations sequentially and logs the result of each.
+
+
+
+// 13. Using Promises, write a function that makes two API requests in parallel and logs both results.
+
+const fetch1 = fetch("https://jsonplaceholder.typicode.com/posts")
+.then(res => res.json())
+.then(data => console.log(data))
+
+const fetch2 = fetch("https://catfact.ninja/fact")
+.then(ans => ans.json())
+.then(d => console.log(d))
+
+Promise.all([fetch1, fetch2]).then(value => console.log(value))
