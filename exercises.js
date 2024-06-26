@@ -63,7 +63,7 @@ getResult() */
 
 // without async await 
 
-f/* unction getData(url) {
+/* function getData(url) {
     return new Promise((resolve, reject) => {
         fetch(url)
         .then(response => {
@@ -78,8 +78,8 @@ f/* unction getData(url) {
 }
 
 getData("https://jsonplaceholder.typicode.com/posts").then(res => console.log(res))
-          .catch(error => console.log(error))
- */
+          .catch(error => console.log(error)) */
+
 
 
 /* 4. Write a JavaScript function that takes an array of URLs and downloads the contents of each URL in parallel using Promises. */
@@ -102,8 +102,10 @@ const urls = [url1, url2, url3]
 async function vehicleManufactures(url) {
     const res = await fetch(url)
     const data = await res.json()
+    let dataRes = data.Results
+    console.log(dataRes)
 
-    console.log(data.Country)
+    
 }
 
 vehicleManufactures("https://vpic.nhtsa.dot.gov/api/vehicles/GetAllManufacturers?format=json&page=2")
