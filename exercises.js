@@ -1,6 +1,6 @@
 /* 1. Write a JavaScript function that takes a callback and invokes it after a delay of 2 second. */
 
-function hello(callback) {
+/* function hello(callback) {
     callback()
 }
 
@@ -10,11 +10,11 @@ function timeOut() {
     }, 2000);
 }
 
-hello(timeOut)
+hello(timeOut) */
 
 /* 2. Write a JavaScript program that converts a callback-based function to a Promise-based function. */
 
-function callback(cb) {
+/* function callback(cb) {
     setTimeout(() => {
         const error = false;
         if (error) {
@@ -38,13 +38,13 @@ const promiseBased = () => {
 }
 
 promiseBased().then(value => console.log(value))
-              .catch(error => console.log("error " +  error));
+              .catch(error => console.log("error " +  error)); */
 
 /* 3. Write a JavaScript a function that makes an HTTP GET request and returns a Promise that resolves with the response data. */
 
 
 
-const url = "https://jsonplaceholder.typicode.com/posts"
+/* const url = "https://jsonplaceholder.typicode.com/posts"
 async function getResult() { 
 
     try {
@@ -59,11 +59,11 @@ async function getResult() {
         
 }
 
-getResult()
+getResult() */
 
 // without async await 
 
-function getData(url) {
+f/* unction getData(url) {
     return new Promise((resolve, reject) => {
         fetch(url)
         .then(response => {
@@ -79,3 +79,31 @@ function getData(url) {
 
 getData("https://jsonplaceholder.typicode.com/posts").then(res => console.log(res))
           .catch(error => console.log(error))
+ */
+
+
+/* 4. Write a JavaScript function that takes an array of URLs and downloads the contents of each URL in parallel using Promises. */
+
+
+
+/* const getUrls = async (arr) => {
+    arr.forEach(item => {
+        let xFetch = await fetch(item, {
+            method: ""
+        })
+    })
+}
+
+const urls = [url1, url2, url3]
+ */
+
+/* 2. Use the `async/await` syntax to fetch vehicle manufacturers’ data from the given API endpoint. After fetching, filter the results and log to the console only manufacturers whose `Country` is equal to `"UNITED STATES (USA)"` */
+
+async function vehicleManufactures(url) {
+    const res = await fetch(url)
+    const data = await res.json()
+
+    console.log(data.Country)
+}
+
+vehicleManufactures("https://vpic.nhtsa.dot.gov/api/vehicles/GetAllManufacturers?format=json&page=2")
