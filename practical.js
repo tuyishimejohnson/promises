@@ -137,12 +137,14 @@ const myPromise = new Promise((resolve, reject) => {
 
 // 13. Using Promises, write a function that makes two API requests in parallel and logs both results.
 
-const fetch1 = fetch("https://jsonplaceholder.typicode.com/posts")
-.then(res => res.json())
-.then(data => console.log(data))
+async function x() {
+    const fetch1 =  ()=> fetch("https://jsonplaceholder.typicode.com/posts")
+    const fetch2 = () => fetch("https://catfact.ninja/fact")
 
-const fetch2 = fetch("https://catfact.ninja/fact")
-.then(ans => ans.json())
-.then(d => console.log(d))
+    const promise = await Promise.all([fetch1(), fetch2()])
+    
+    return promise
+}
 
-Promise.all([fetch1, fetch2]).then(value => console.log(value))
+x().then(value => value)
+.then(value => console.log(value))
