@@ -84,22 +84,31 @@ getData("https://jsonplaceholder.typicode.com/posts").then(res => console.log(re
 
 /* 4. Write a JavaScript function that takes an array of URLs and downloads the contents of each URL in parallel using Promises. */
 
+/* const urls = ["https://jsonplaceholder.typicode.com/posts", "https://catfact.ninja/fact"] */
 
-
-/* const getUrls = async (arr) => {
-    arr.forEach(item => {
-        let xFetch = await fetch(item, {
-            method: ""
+const getUrl1 = async (url) => {
+    return new Promise((resolve, reject) => {
+        fetch(url)
+        .then(value => {
+            if(!value.ok) {
+                throw new Error("Fetching failed!")
+            }
         })
-    })
+        .catch(error => reject("Error " + error))
+    }).then(result => console.log(result))
+        .catch(err => console.log("error:" + err))
 }
 
-const urls = [url1, url2, url3]
- */
+
+getUrl1("https://jsonplaceholder.typicode.com/posts")
+
+
+
+
 
 /* 5. Use the `async/await` syntax to fetch vehicle manufacturers’ data from the given API endpoint. After fetching, filter the results and log to the console only manufacturers whose `Country` is equal to `"UNITED STATES (USA)"` */
 
-async function vehicleManufactures(url) {
+/* async function vehicleManufactures(url) {
     const res = await fetch(url)
     const data = await res.json()
     let dataRes = data.Results
@@ -112,4 +121,4 @@ async function vehicleManufactures(url) {
     
 }
 
-vehicleManufactures("https://vpic.nhtsa.dot.gov/api/vehicles/GetAllManufacturers?format=json&page=2")
+vehicleManufactures("https://vpic.nhtsa.dot.gov/api/vehicles/GetAllManufacturers?format=json&page=2") */
