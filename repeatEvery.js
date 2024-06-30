@@ -1,79 +1,25 @@
-function repeatEvery(num) {
-    
-    const s = setInterval(() => {
-        for(let i = 0; i <= num; i++) {
-            
-            console.log(i)
-        }
-
-        if(num === 10){
-            clearInterval(s)
-        }
-        
-    }, 1000);
-
-    
-}
+/* Implement a function called repeatEvery() that takes another function and a time interval (in milliseconds) as arguments. This function should execute the given function repeatedly at the specified time interval until manually stopped. */
 
 
-console.log(repeatEvery(10))
+let count = 1
+const set = setInterval(() => {
+  console.log("Hello world")
+  count++
 
-
-
-console.log('Start');
-
-setTimeout(() => {
-console.log('Timeout 1');
-}, 0);
-
-Promise.resolve()
-.then(() => {
-console.log('Promise 1');
-})
-.then(() => {
-console.log('Promise 2');
-});
-
-setTimeout(() => {
-console.log('Timeout 2');
-}, 0);
-
-console.log('End'); 
-
-
-
-const promise = new Promise((resolve, reject) => {
-    console.log('Promise created');
-    resolve('First resolve');
-  });
   
-  promise
-    .then((result) => {
-      console.log(result);
-      return 'Second resolve';
-    })
-    .then((result) => {
-      console.log(result);
-      throw new Error('Error in chain');
-    })
-    .catch((error) => {
-      console.error('Caught:', error.message);
-    })
-    .then(() => {
-      console.log('After catch');
-    });
+}, 1000)
+if(count > 3) {
+  clearInterval(set)}
 
-    // POST request using fetch API
 
-    const url = "url"
+/* function repeatEvery() {
+  
+  
+}
+ */
 
-    fetch(url, {
-      method: "POST",
-      Headers: {
-        Accept: application.json,
-        "content-type": "Application/json"
-      },
 
-      Body: "body",
-      cache: "default"
-    })
+  
+
+
+
