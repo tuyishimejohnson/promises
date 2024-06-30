@@ -1,6 +1,3 @@
-
-
-
 /* Implement a function performFastAsync() that sends a GET request to a specified API endpoint, simultaneously initiates a timer with a given delay, and cancels either the request or timer based on which one finishes first.  */
 
 
