@@ -11,6 +11,7 @@ const fetchUserTodos = async () => {
     }))
 
     const res = await Promise.all(fetchData)
+
     return res
 }
 
