@@ -1,45 +1,32 @@
 /* Requesting data from the server using XMLHttpRequest */
 
-const request = new XMLHttpRequest();
 
-request.open("GET", "https://api.nationalize.io?name=nathaniel")
-//  /* open method takes two parameters, first: the string specifying what the type of request is and the second: the url link inside quotations*/
+const getData = (callback) => {
 
- // statechange is when the request is going through different phases of request
+    // statechange is when the request is going through different phases of request
+   
+    const xhr = new XMLHttpRequest()
+    
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/posts")
 
-
-/* request.send()
-
-request.onload = function() {
-    if(request.status !== 200) {
-        alert(`Error: ${request.status}`)
-        return 
-    }   
-    alert(`Response: ${request.response}`)
-}
- */
-
-
-
-
-const URL = "https://dog.ceo/api/breeds/image/random"
-
-async function fetchDog() {
-    try {
-        
-        const response = await fetch(URL)
-        const data = await response.json()
-        data = dogImages(data.message)
-
-    } catch (error) {
-        console.log(`error: ${error}`)
-    }
+    xhr.addEventListener("readystatechange", () => {
+        /* console.log(xhr, xhr.readyState) */
+    
+        if(xhr.readyState === 4 && xhr.status === 200) {
+            callback(undefined, xhr.responseText)
+        } else if (xhr.readyState === 4) {
+            callback("Request failed", undefined)
+        }
+    })
+    
+    
+    
+    xhr.send()
 }
 
 
-function dogImages(dataUrl) {
-    const dogImage = document.getElementById("dogImages")
-    dogImage.src = dataUrl
-}
+getData((error, data) => {
+    console.log("CallBACKfired")
+    data ? console.log(data) : console.log(error)
+})
 
-fetchDog()
