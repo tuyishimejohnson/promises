@@ -35,4 +35,3 @@ const getFastPosts = async () => {
 
 getFastPosts().then(result => console.log(result))
 .catch(error => console.log(error))
-

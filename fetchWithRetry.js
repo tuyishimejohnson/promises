@@ -1,18 +1,21 @@
-const url = 'https://catfact.ninja/fact'
 
 
+const fetchWithRetry = (url, retries) => {
 
-async function catFacts() {
+    return fetch(url).then(response => {
+        if(!response.ok) {
+            throw new Error("Error")
+        }
 
-    try {
-        const response = await fetch(url)
-        const data = await response.json()
-        console.log(data)
-    } catch (error) {
-        console.log(`Error: This is an error`)
-    }
-    
+        return response.json()
+    }).catch(error => {
+        if(retries <= 1) {
+            throw error
+        }
+
+        return fetchWithRetry(url, retries - 1) 
+    })
 }
 
-
-catFacts()
+fetchWithRetry('https://catfact.ninja/fact', 3).then(res => console.log(res))
+.catch(error => console.log("Error" + error))
