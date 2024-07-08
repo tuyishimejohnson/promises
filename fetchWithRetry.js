@@ -19,3 +19,6 @@ const fetchWithRetry = (url, retries) => {
 
 fetchWithRetry('https://catfact.ninja/fact', 3).then(res => console.log(res))
 .catch(error => console.log("Error" + error))
+
+
+
